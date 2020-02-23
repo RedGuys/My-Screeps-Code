@@ -1,3 +1,5 @@
+var positions = require("./positions");
+
 module.exports.work = function(creep) {
 	try {
 		if(creep.memory.fulled) {
@@ -19,8 +21,9 @@ module.exports.work = function(creep) {
 		} else {
 			if(creep.carry.energy < creep.carryCapacity) {
 				var sources = creep.room.find(FIND_SOURCES_ACTIVE);
-				if(creep.harvest(sources[0]) == ERR_NOT_IN_RANGE) {
-					creep.moveTo(sources[0]);
+				var source = positions.getNearest(creep.pos,sources);
+				if(creep.harvest(source) == ERR_NOT_IN_RANGE) {
+					creep.moveTo(source);
 				}
 			}
 			else {
@@ -28,6 +31,6 @@ module.exports.work = function(creep) {
 			}
 		}
 	} catch(e) {
-		console.log("Builder not found");
+		console.log("Fixick not found");
 	}
 }

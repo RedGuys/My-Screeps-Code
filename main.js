@@ -20,5 +20,5 @@ module.exports.loop = function () {
 	Healer.work(Game.creeps['Healer1']);
 	Repaier.work(Game.creeps['Fixick1']);
 	Repaier.work(Game.creeps['Fixick2']);
-	console.log("=======");
+	console.log("Update!");
 }

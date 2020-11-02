@@ -26,7 +26,7 @@ module.exports.check = function() {
 			if(res === 0) {
 				Game.creeps[creeps[i].name].move(TOP);
 			} else {
-			    console.log(res);
+			    //console.log(res);
             }
 		}
 	}
